@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Audio Consent</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="consent-box">
+    <h1>⚠️ Audio Consent Required ⚠️</h1>
+    <p>To proceed, please allow audio playback.</p>
+    <button id="consent-button">Allow Audio and Continue</button>
+  </div>
+
+  <script>
+    document.getElementById('consent-button').addEventListener('click', function() {
+      // Redirect to the prank page
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
