@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Audio Consent</title>
+  <style>
+    body, html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .consent-box {
+      text-align: center;
+      padding: 20px;
+      border: 5px solid red;
+      background-color: black;
+      color: white;
+      font-size: 2rem;
+    }
+
+    #consent-button {
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="consent-box">
+    <h1>⚠️ Audio Consent Required ⚠️</h1>
+    <p>To proceed, please allow audio playback.</p>
+    <button id="consent-button">Allow Audio and Continue</button>
+  </div>
+
+  <script>
+    document.getElementById('consent-button').addEventListener('click', function() {
+      // Redirect to the prank page
+      window.location.href = 'https://github.com/GuardianKing543/BssHackPrank/blob/main/indexxx.html';
+    });
+  </script>
+</body>
+</html>
