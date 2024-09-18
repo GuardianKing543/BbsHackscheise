@@ -5,64 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Enhanced Prank</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Audio Consent</title>
+  <style>
+    body, html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .consent-box {
+      text-align: center;
+      padding: 20px;
+      border: 5px solid red;
+      background-color: black;
+      color: white;
+      font-size: 2rem;
+    }
+
+    #consent-button {
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <div class="warning-box">
-    <h1>⚠️ WARNING: SYSTEM FAILURE ⚠️</h1>
-    <p>Your device will shut down in:</p>
-    <div class="countdown" id="countdown">10</div>
+  <div class="consent-box">
+    <h1>⚠️ Audio Consent Required ⚠️</h1>
+    <p>To proceed, please allow audio playback.</p>
+    <button id="consent-button">Allow Audio and Continue</button>
   </div>
 
-  <div id="fullscreen-trigger"></div>
-
-  <!-- Audio file -->
-  <audio id="alert-sound" src="https://github.com/your-username/your-repo-name/raw/main/docs/audio/Black-Microwave-Earrape.ogg"></audio>
-
   <script>
-    // Vibration for Android
-    if (navigator.vibrate) {
-      navigator.vibrate([1000, 500, 1000, 500, 1000]); // Strong vibration pattern
-    }
-
-    // Play alert sound every few seconds
-    function playAlertSound() {
-      const alertSound = document.getElementById('alert-sound');
-      if (alertSound) alertSound.play();
-    }
-    setInterval(playAlertSound, 5000); // Play every 5 seconds
-
-    // Countdown timer
-    let countdownElement = document.getElementById("countdown");
-    let countdownValue = 10;
-
-    let countdownInterval = setInterval(function() {
-      countdownValue--;
-      countdownElement.textContent = countdownValue;
-
-      if (countdownValue <= 0) {
-        clearInterval(countdownInterval);
-        countdownElement.textContent = "Shutting down...";
-        // Trigger screen shake effect
-        document.body.style.animation = 'screenShake 0.5s';
-      }
-    }, 1000);
-
-    // Function to request fullscreen
-    function requestFullscreen() {
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-      } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
-        document.documentElement.webkitRequestFullscreen();
-      } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
-        document.documentElement.msRequestFullscreen();
-      }
-    }
-
-    // Request fullscreen on page load and on click/tap
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('fullscreen-trigger').addEventListener('click', requestFullscreen);
+    document.getElementById('consent-button').addEventListener('click', function() {
+      // Redirect to the prank page
+      window.location.href = 'https://github.com/GuardianKing543/BssHackPrank/blob/main/audio-consent.html';
     });
   </script>
 </body>
